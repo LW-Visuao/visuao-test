@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Launch in…</title>
+  <title>Visuao.de | Homepage</title>
   <style>
     :root{
       --bg1:#0b1220;
@@ -60,20 +60,11 @@
       overflow:hidden;
     }
 
-    /* Wenn du später ein Bild einsetzt, einfach <img> aktivieren */
     .logo img{
       width:100%;
       height:100%;
       object-fit:cover;
-      display:none; /* <- auf block setzen, sobald du ein src einfügst */
-    }
-
-    .logo span{
-      font-weight:700;
-      letter-spacing:.08em;
-      color:rgba(255,255,255,.7);
-      font-size:12px;
-      text-transform:uppercase;
+      display:block; 
     }
 
     h1{
@@ -158,51 +149,44 @@
 <body>
   <main class="wrap">
     <section class="card" aria-label="Website Under Construction">
-      <!-- Logo Placeholder: Link/Quelle fügst du später ein -->
       <div class="logo" aria-label="Logo">
-        <!-- <img src="DEIN_LOGO_LINK" alt="Logo" /> -->
-        <span>Logo</span>
+        <img src="https://cdn.discordapp.com/attachments/1327684427286970498/1458238229491748946/visuao.png?ex=695ee9ae&is=695d982e&hm=c2e9d190f1bd6fa610605d55679d65ce4d930561f7b7e51fe3cc19b5f4448301" alt="Logo"/>
       </div>
 
       <h1>Launch in…</h1>
       <p class="subtitle">
-        Wir bauen gerade an der Website. Der Countdown läuft bis zum Release am
-        <span class="accent">01.01.2026</span> — nicht wegen Neujahr, sondern weil’s dann live geht.
+        This website is currently under construction. The countdount runs till our release date on
+        <span class="accent">July 1st 2026</span>
       </p>
 
       <div class="timer" role="timer" aria-live="polite">
         <div class="unit">
           <div class="num" id="days">—</div>
-          <div class="label">Tage</div>
+          <div class="label">Days</div>
         </div>
         <div class="unit">
           <div class="num" id="hours">—</div>
-          <div class="label">Stunden</div>
+          <div class="label">Hours</div>
         </div>
         <div class="unit">
           <div class="num" id="minutes">—</div>
-          <div class="label">Minuten</div>
+          <div class="label">Minutes</div>
         </div>
         <div class="unit">
           <div class="num" id="seconds">—</div>
-          <div class="label">Sekunden</div>
+          <div class="label">Seconds</div>
         </div>
       </div>
 
       <div class="meta">
         <span class="pill">Status: <span class="accent">Under Construction</span></span>
-        <span class="pill">Release: <span id="releaseText" class="accent">01.01.2026</span></span>
-      </div>
-
-      <div class="footer">
-        Tipp: Logo einfügen, indem du oben im <code>&lt;img&gt;</code> dein <code>src</code> setzt und <code>display</code> auf <code>block</code> stellst.
+        <span class="pill">Release: <span id="releaseText" class="accent">01.07.2026</span></span>
       </div>
     </section>
   </main>
 
   <script>
-    // Ziel: 01.01.2026 00:00:00 (lokale Server-/Browserzeit)
-    const target = new Date(2026, 0, 1, 0, 0, 0); // Monat ist 0-basiert: 0 = Januar
+    const target = new Date(2026, 6, 1, 0, 0, 0);
 
     const el = {
       days: document.getElementById("days"),
@@ -211,8 +195,7 @@
       seconds: document.getElementById("seconds"),
       releaseText: document.getElementById("releaseText"),
     };
-
-    // Optional: hübsches Datum im UI (de-DE)
+    
     el.releaseText.textContent = target.toLocaleDateString("de-DE");
 
     const pad2 = (n) => String(n).padStart(2, "0");
